@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Awesome DEX | Bitcoin-Only Trading",
-  description: "Premium Bitcoin DEX with professional charts, animated orderbook, and real-time analysis",
+  title: "Awesome DEX",
+  description: "Bitcoin-Only Decentralized Exchange",
 };
 
 export default function RootLayout({
