@@ -1,39 +1,25 @@
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
-
-export default function IndexPage() {
+export default function Home() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <div className="max-w-3xl text-center">
+        <h1 className="text-5xl font-bold mb-4">
+          <span className="text-bitcoin-500">Awesome</span> DEX
         </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
+        <p className="text-xl text-muted-foreground mb-8">
+          Bitcoin-Only Decentralized Exchange
         </p>
+        <div className="flex gap-4 justify-center">
+          <Button className="bg-bitcoin-500 hover:bg-bitcoin-600 text-black font-semibold">
+            Launch App
+          </Button>
+          <Button variant="outline">Documentation</Button>
+        </div>
+        <div className="mt-12 text-sm text-muted-foreground">
+          🟠 Built by Musk Team • Non-custodial • Premium Trading Experience
+        </div>
       </div>
-      <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
-      </div>
-    </section>
-  )
+    </main>
+  );
 }
