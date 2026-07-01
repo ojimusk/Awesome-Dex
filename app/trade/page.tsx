@@ -1,26 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-// ============ KOMPONEN CHART ============
-function Chart() {
-  return (
-    <div className="bg-[#1E2329] rounded-lg p-4 border border-[#2B3139]">
-      <div className="text-sm text-gray-400 mb-2">📊 Chart</div>
-      <div className="h-[300px] flex items-center justify-center border border-dashed border-[#2B3139] rounded-lg">
-        <p className="text-gray-500 text-sm">TradingView Chart akan muncul di sini</p>
-      </div>
-      <div className="flex gap-2 mt-3 text-xs flex-wrap">
-        <button className="px-3 py-1 bg-[#2B3139] rounded hover:bg-[#3B4149]">1m</button>
-        <button className="px-3 py-1 bg-[#2B3139] rounded hover:bg-[#3B4149]">5m</button>
-        <button className="px-3 py-1 bg-[#F7931A] text-black rounded font-semibold">15m</button>
-        <button className="px-3 py-1 bg-[#2B3139] rounded hover:bg-[#3B4149]">1H</button>
-        <button className="px-3 py-1 bg-[#2B3139] rounded hover:bg-[#3B4149]">4H</button>
-        <button className="px-3 py-1 bg-[#2B3139] rounded hover:bg-[#3B4149]">D</button>
-      </div>
-    </div>
-  );
-}
+import TradingViewWidget from "../components/TradingViewWidget";
+import WalletConnect from "../components/WalletConnect";
 
 // ============ KOMPONEN ORDERBOOK ============
 function Orderbook() {
@@ -109,8 +91,8 @@ function Analysis() {
 
 // ============ HALAMAN UTAMA TRADE ============
 export default function TradePage() {
-  const [price, setPrice] = useState("96,450");
-  const [change, setChange] = useState("+2.4%");
+  const [price] = useState("96,450");
+  const [change] = useState("+2.4%");
 
   return (
     <div className="min-h-screen bg-[#0B0E11] text-white p-4">
@@ -123,15 +105,13 @@ export default function TradePage() {
             <span className="text-green-500 text-sm">{change}</span>
           </div>
         </div>
-        <button className="bg-[#F7931A] hover:bg-[#E07C0F] text-black font-semibold px-4 py-2 rounded-lg text-sm">
-          Connect Wallet
-        </button>
+        <WalletConnect />
       </div>
 
       {/* Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2">
-          <Chart />
+          <TradingViewWidget />
         </div>
         <div>
           <Orderbook />
@@ -147,4 +127,4 @@ export default function TradePage() {
       </div>
     </div>
   );
-            }
+}
