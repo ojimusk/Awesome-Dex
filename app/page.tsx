@@ -1,23 +1,22 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
-  const goToTrade = () => {
-    window.location.href = "/trade";
-  };
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect langsung ke halaman Trade
+    router.push("/trade");
+  }, [router]);
 
   return (
-    <div className="min-h-screen bg-[#0B0E11] flex flex-col items-center justify-center text-white p-4">
-      <h1 className="text-4xl font-bold mb-2">
-        <span className="text-[#F7931A]">Awesome</span> DEX
-      </h1>
-      <p className="text-gray-400 mb-6">Bitcoin-Only Decentralized Exchange</p>
-      <button
-        onClick={goToTrade}
-        className="bg-[#F7931A] hover:bg-[#E07C0F] text-black font-bold px-8 py-3 rounded-lg text-lg"
-      >
-        🚀 Launch App
-      </button>
-      <p className="mt-8 text-xs text-gray-600">🟠 Built by Musk Team</p>
+    <div className="min-h-screen bg-[#0B0E11] flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-[#F7931A]">🔥 Awesome DEX</h1>
+        <p className="text-gray-500 mt-2 text-sm">Loading...</p>
+      </div>
     </div>
   );
 }
