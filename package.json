@@ -11,6 +11,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
+    "@tradingview/lightweight-charts": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "latest",
