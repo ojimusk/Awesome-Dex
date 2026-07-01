@@ -1,50 +1,19 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect otomatis ke halaman Trade
+    router.push("/trade");
+  }, [router]);
+
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: '#0B0E11',
-      color: 'white',
-      fontFamily: 'sans-serif',
-      padding: '16px'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <h1 style={{ fontSize: '40px', fontWeight: 'bold' }}>
-          <span style={{ color: '#F7931A' }}>Awesome</span> DEX
-        </h1>
-        <p style={{ color: '#888', marginTop: '8px' }}>
-          Bitcoin-Only Decentralized Exchange
-        </p>
-        
-        {/* PAKE TAG <a> BUKAN <Link> ATAU <button> */}
-        <a href="/trade" style={{ textDecoration: 'none' }}>
-          <button style={{
-            marginTop: '24px',
-            background: '#F7931A',
-            color: 'black',
-            border: 'none',
-            padding: '12px 32px',
-            borderRadius: '8px',
-            fontSize: '16px',
-            fontWeight: 'bold',
-            cursor: 'pointer'
-          }}>
-            🚀 Launch App
-          </button>
-        </a>
-        
-        <p style={{
-          marginTop: '48px',
-          fontSize: '12px',
-          color: '#444',
-          borderTop: '1px solid #222',
-          paddingTop: '16px'
-        }}>
-          🟠 Built by Musk Team
-        </p>
-      </div>
+    <div className="min-h-screen bg-[#0B0E11] flex items-center justify-center">
+      <p className="text-[#F7931A] text-xl">Loading Awesome DEX...</p>
     </div>
   );
 }
