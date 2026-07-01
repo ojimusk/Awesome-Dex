@@ -18,8 +18,8 @@ export default function Home() {
           Bitcoin-Only Decentralized Exchange
         </p>
         
-        {/* PAKE TAG <a> BUKAN <Link> */}
-        <a href="/trade">
+        {/* PAKE TAG <a> BUKAN <Link> ATAU <button> */}
+        <a href="/trade" style={{ textDecoration: 'none' }}>
           <button style={{
             marginTop: '24px',
             background: '#F7931A',
