@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0B0E11] text-white p-4">
@@ -10,11 +8,11 @@ export default function Home() {
         <p className="text-gray-400 mt-2 text-sm md:text-base">
           Bitcoin-Only Decentralized Exchange
         </p>
-        <Link href="/trade">
+        <a href="/trade">
           <button className="mt-6 bg-[#F7931A] hover:bg-[#E07C0F] text-black font-bold px-6 py-3 rounded-lg text-sm md:text-base transition-colors">
             🚀 Launch App
           </button>
-        </Link>
+        </a>
         <p className="mt-8 text-xs text-gray-600 border-t border-[#1E2329] pt-4">
           🟠 Built by Musk Team • Non-custodial
         </p>
